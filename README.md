@@ -1,4 +1,4 @@
-instchat
+instachat
 =====================
 
 A sample probject using Cordova/Phonegap and Ionic to build a real-time chat program for iOS (also for Android)
