@@ -1,0 +1,45 @@
+/* Empty. Add your own CSS if you like */
+.far-right {
+	float: right;
+	margin-left: 10px;
+}
+
+.item-content {
+	padding: 15px 15px 15px 15px !important;
+}
+
+.messages h2 {
+	font-size: 12px !important;
+}
+
+.message p {
+	font-size: 12px !important;
+}
+
+.bar-footer {
+	border-color: #b2b2b2;
+	background-color: #f8f8f8;
+	background-image: linear-gradient(0deg, #b2b2b2, #b2b2b2 50%, transparent 50%);
+	color: #444;
+}
+
+.messageForm {
+	width: 90%; float: left;
+}
+
+.messageForm label {
+	margin-right: 5px;
+}
+
+#commentBox {
+	height: 50px;
+	padding: 5px;
+}
+
+.save-button {
+	float: right; margin-top: 10px;
+}
+
+.save-button button {
+	font-size: 50px;
+}

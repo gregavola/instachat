@@ -1,0 +1,31 @@
+<ion-view title="Friends">
+  <ion-content class="has-header">
+  	<ion-refresher ng-show="finishedLoading"
+    pulling-text="Pull to refresh..."
+    	on-refresh="doRefresh()">
+  	</ion-refresher>
+  	<div class="item item-divider" ng-show="isOnlineContacts">
+    	Online
+	</div>
+	<div ng-show="!finishedLoading" style="margin-top: 50px; text-align: center;">
+		<i class="ion-refreshing" style="font-size: 50px;"></i>
+	</div>
+    <ion-list>
+      <ion-item ng-repeat="contact in onlineContacts" type="item-text-wrap" href="#/tab/thread/{{contact.attributes.thread_id}}/{{contact.attributes.user.id}}" item="item">
+        {{contact.attributes.user.attributes.display_name}}
+        <i class="icon ion-chevron-right far-right"></i> 
+        <span class="item-note">
+        	Last Active: {{ contact.attributes.user.updatedAt | momentFromNow}}
+        </span>
+      </ion-item>
+    </ion-list>
+    <div class="item item-divider" ng-show="isOfflineContacts">
+    	Offline
+	</div>
+	<ion-list>
+      <ion-item ng-repeat="contact in offlineContacts" type="item-text-wrap" href="#/tab/thread/{{contact.attributes.thread_id}}/{{contact.attributes.user.id}}">
+        {{contact.attributes.user.attributes.display_name}}
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

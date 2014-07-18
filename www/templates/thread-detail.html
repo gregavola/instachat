@@ -1,0 +1,29 @@
+<ion-view title="{{friend.name}}">
+	<ion-content has-header="true" padding="true" class="tabs-item-hide">
+	<ion-refresher
+    pulling-text="Pull for More Message..."
+    	on-refresh="doRefresh()">
+  	</ion-refresher>
+	<ion-list class="list">
+  		<ion-item class="item item-avatar messages" id="message_{{message.id}}" ng-repeat="message in messages">
+  			<img gravatar-src="'{{message.attributes.user.attributes.email}}'" gravatar-size="100">
+	      	<p moment-interval="5000" style="float: right;">{{ message.createdAt | momentFromNow}}</p>
+	      	<h2>{{message.attributes.user.attributes.display_name}}</h2>
+	     	<p>{{message.attributes.message}}</p>
+  		</ion-item>
+  	</ion-list>
+	</ion-content>
+	<ion-footer-bar>
+	<form name="messageForm" class="messageForm">
+		<label class="item item-input">
+			<textarea id="commentBox" placeholder="What do you want to say?" ng-model="content.text"></textarea>
+		</label>
+	</form>
+	<div class="save-button">
+		<button class="button button-icon ion-paper-airplane" ng-click="saveMessage(content)"></button>
+	</div>
+	</ion-footer-bar>
+	<div id="userObject" style="display: none;">
+		{{user}}
+	</div>
+</ion-view>
